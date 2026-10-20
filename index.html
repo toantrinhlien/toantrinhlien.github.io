@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khánh Vy · Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-2: #2A3D66;
+    --honey: #E8A33D;
+    --honey-soft: #FBE7C4;
+    --cream: #FFF9F0;
+    --mist: #EAF0F8;
+    --text: #1B2A4A;
+    --muted: #46536E;
+    --white: #FFFFFF;
+    --radius: 28px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; overflow-x: hidden; overflow-x: clip; }
+
+  body {
+    margin: 0;
+    font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--cream);
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+  img, svg { max-width: 100%; }
+
+  h1, h2, h3, p { margin: 0; }
+
+  a { color: inherit; }
+
+  a:focus-visible {
+    outline: 3px solid var(--honey);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  section {
+    position: relative;
+    padding: 72px 0;
+    overflow: hidden;
+    overflow: clip;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--honey-soft);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 8vw, 3.25rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 36px;
+  }
+
+  /* Nút */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    background: var(--honey);
+    color: var(--navy);
+    box-shadow: 0 8px 20px rgba(27, 42, 74, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    max-width: 100%;
+    text-align: center;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(27, 42, 74, 0.24);
+  }
+
+  /* ===== Đầu trang ===== */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    overflow: clip;
+    background: var(--navy);
+    color: var(--white);
+    padding: 80px 0 120px;
+  }
+  .hero .wrap { position: relative; z-index: 2; }
+
+  /* trăng tròn */
+  .moon {
+    position: absolute;
+    top: -60px;
+    right: -70px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #FFE3A8 0%, var(--honey) 70%);
+    opacity: 0.95;
+    z-index: 1;
+  }
+  .moon::after {
+    content: "";
+    position: absolute;
+    inset: -28px;
+    border-radius: 50%;
+    border: 2px solid rgba(232, 163, 61, 0.35);
+  }
+
+  /* mây và núi */
+  .hill {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .hill-1 {
+    width: 520px; height: 260px;
+    left: -160px; bottom: -150px;
+    background: var(--navy-2);
+  }
+  .hill-2 {
+    width: 600px; height: 280px;
+    right: -260px; bottom: -190px;
+    background: #34497A;
+  }
+  .hill-3 {
+    width: 140%; height: 120px;
+    left: -20%; bottom: -70px;
+    background: var(--cream);
+  }
+  .cloud {
+    position: absolute;
+    z-index: 1;
+    height: 22px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+  }
+  .cloud-1 { width: 110px; top: 150px; left: -20px; }
+  .cloud-2 { width: 70px; top: 182px; left: 40px; }
+
+  .avatar {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--cream);
+    color: var(--navy);
+    font-weight: 900;
+    font-size: 2.5rem;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.12);
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.75rem, 13vw, 5rem);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-bottom: 14px;
+  }
+
+  .role {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--honey-soft);
+    margin-bottom: 20px;
+  }
+
+  .intro {
+    font-size: 1.125rem;
+    max-width: 34em;
+    color: #E6ECF5;
+    margin-bottom: 32px;
+  }
+
+  /* ===== Thành tích ===== */
+  .stats-blob {
+    position: absolute;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: var(--honey-soft);
+    top: 40px; left: -180px;
+    z-index: 0;
+  }
+  .stats .wrap { position: relative; z-index: 1; }
+
+  .stat-list {
+    display: grid;
+    gap: 22px;
+  }
+
+  .stat {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    box-shadow: 0 10px 30px rgba(27, 42, 74, 0.08);
+    border: 1px solid #EFE6D6;
+  }
+  .stat:nth-child(2) {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+  }
+  .stat:nth-child(2) .stat-text { color: #DCE4F0; }
+
+  .stat-num {
+    display: block;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 12vw, 4.25rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 14px;
+    overflow-wrap: anywhere;
+  }
+  .stat:nth-child(1) .stat-num,
+  .stat:nth-child(3) .stat-num { color: var(--navy); }
+  .stat:nth-child(2) .stat-num { color: var(--honey); }
+
+  .stat-num.long {
+    font-size: clamp(2.1rem, 10vw, 3.5rem);
+  }
+
+  .stat-text {
+    font-size: 1rem;
+    color: var(--muted);
+  }
+
+  /* ===== Dự án ===== */
+  .projects { background: var(--mist); }
+  .projects-blob {
+    position: absolute;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    border: 36px solid rgba(232, 163, 61, 0.28);
+    right: -130px; top: -60px;
+    z-index: 0;
+  }
+  .projects .wrap { position: relative; z-index: 1; }
+
+  .project-list {
+    display: grid;
+    gap: 26px;
+  }
+
+  .project {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 30px 24px;
+    box-shadow: 0 10px 30px rgba(27, 42, 74, 0.08);
+  }
+  .project h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+  .project-index {
+    display: inline-grid;
+    place-items: center;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--honey);
+    color: var(--navy);
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+
+  .row { margin-top: 16px; }
+  .row:first-of-type { margin-top: 0; }
+  .label {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+    background: var(--mist);
+    color: var(--navy);
+  }
+  .row.result .label {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .row p { font-size: 1rem; color: var(--text); }
+  .row.result p { font-weight: 700; }
+
+  /* ===== Kỹ năng ===== */
+  .skills-blob {
+    position: absolute;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: var(--navy);
+    opacity: 0.06;
+    bottom: -60px; right: -40px;
+  }
+  .skill-group + .skill-group { margin-top: 32px; }
+  .skill-group h3 {
+    font-size: 1.125rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .tags li {
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: var(--white);
+    border: 2px solid var(--navy);
+    font-weight: 600;
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  /* Kỹ năng: lưới 2 cột để 6 nhãn nằm gọn trong 3 dòng */
+  .tags.skills {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .tags.skills li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 8px;
+    border-radius: 16px;
+    line-height: 1.35;
+  }
+  @media (min-width: 720px) {
+    .tags.skills { gap: 12px; }
+    .tags.skills li { padding: 12px 16px; border-radius: 999px; }
+  }
+  .tags.tools li {
+    background: var(--honey-soft);
+    border-color: var(--honey);
+  }
+
+  /* ===== Liên hệ ===== */
+  .contact {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 96px 0;
+  }
+  .contact .wrap { position: relative; z-index: 1; }
+  .contact-moon {
+    position: absolute;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: var(--navy-2);
+    left: 50%; top: -230px;
+    transform: translateX(-50%);
+  }
+  .contact-dot {
+    position: absolute;
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    background: var(--honey);
+    opacity: 0.9;
+    right: -30px; bottom: 40px;
+  }
+  .contact .section-title { color: var(--white); margin-bottom: 18px; }
+  .contact .eyebrow { background: var(--honey); }
+  .contact-text {
+    font-size: 1.125rem;
+    color: #E6ECF5;
+    max-width: 30em;
+    margin: 0 auto 22px;
+  }
+  .email {
+    display: block;
+    font-size: clamp(1.125rem, 5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--honey-soft);
+    overflow-wrap: anywhere;
+    margin-bottom: 30px;
+  }
+  .btn-big {
+    min-height: 60px;
+    padding: 16px 36px;
+    font-size: 1.125rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  /* ===== Hiệu ứng xuất hiện (chỉ khi JS đã chạy) ===== */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal,
+    .js .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .btn { transition: none; }
+    .btn:hover { transform: none; }
+  }
+
+  /* ===== Máy tính bảng / máy tính ===== */
+  @media (min-width: 720px) {
+    .wrap { padding: 0 32px; }
+    section { padding: 104px 0; }
+
+    .hero { padding: 120px 0 170px; }
+    .moon { width: 340px; height: 340px; top: -40px; right: -40px; }
+    .cloud-1 { top: 260px; left: 8%; }
+    .cloud-2 { top: 292px; left: calc(8% + 60px); }
+
+    .stat-list {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+    }
+    .stat:nth-child(2) { margin-top: 56px; }
+    .stat:nth-child(3) { margin-top: 112px; }
+
+    .project-list {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+    .project:nth-child(2) { margin-top: 72px; }
+
+    .section-title { max-width: 14em; }
+    .skills .section-title { margin-left: 15%; }
+  }
+
+  @media (min-width: 1024px) {
+    .moon { right: calc(50% - 560px); }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="moon" aria-hidden="true"></div>
+  <div class="cloud cloud-1" aria-hidden="true"></div>
+  <div class="cloud cloud-2" aria-hidden="true"></div>
+  <div class="hill hill-1" aria-hidden="true"></div>
+  <div class="hill hill-2" aria-hidden="true"></div>
+  <div class="hill hill-3" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <div class="avatar" aria-hidden="true">KV</div>
+    <h1>Khánh Vy</h1>
+    <p class="role">Trưởng nhóm marketing · 5 năm kinh nghiệm</p>
+    <p class="intro">Mình làm marketing cho trà, mật ong và hộp quà đặc sản, giúp sản phẩm bán tốt hơn bằng chiến dịch có kế hoạch và số liệu rõ ràng.</p>
+    <a class="btn" href="mailto:khanhvymar@gmail.com">Gửi email cho mình</a>
+  </div>
+</header>
+
+<main>
+  <section class="stats" aria-labelledby="stats-title">
+    <div class="stats-blob" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow">Thành tích</span>
+      <h2 class="section-title reveal" id="stats-title">Những con số mình tự hào</h2>
+      <div class="stat-list">
+        <div class="stat reveal">
+          <span class="stat-num">169 triệu</span>
+          <p class="stat-text">Hộp quà Trung Thu bán được trong quý 3, sản phẩm bán chạy nhất</p>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num">+42%</span>
+          <p class="stat-text">Doanh thu tháng 9 so với tháng 8</p>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num long">3 giờ → 20 phút</span>
+          <p class="stat-text">Thời gian làm báo cáo bán hàng hàng tuần</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" aria-labelledby="projects-title">
+    <div class="projects-blob" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow">Dự án</span>
+      <h2 class="section-title reveal" id="projects-title">Dự án tiêu biểu</h2>
+      <div class="project-list">
+        <article class="project reveal">
+          <span class="project-index" aria-hidden="true">01</span>
+          <h3>Hộp quà Trung Thu</h3>
+          <div class="row">
+            <span class="label">Vấn đề</span>
+            <p>Đơn hàng nhận được dưới 30% chỉ tiêu.</p>
+          </div>
+          <div class="row">
+            <span class="label">Đã làm</span>
+            <p>Điều chỉnh lại chiến dịch marketing, đổi nhóm khách hàng mục tiêu từ bán cho cá nhân sang bán cho doanh nghiệp.</p>
+          </div>
+          <div class="row result">
+            <span class="label">Kết quả</span>
+            <p>Đạt 120% chỉ tiêu, sớm hơn hạn 1 tuần.</p>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <span class="project-index" aria-hidden="true">02</span>
+          <h3>Tự động hóa báo cáo bán hàng</h3>
+          <div class="row">
+            <span class="label">Vấn đề</span>
+            <p>Làm báo cáo quá lâu, mất khoảng 3 tiếng mỗi lần.</p>
+          </div>
+          <div class="row">
+            <span class="label">Đã làm</span>
+            <p>Áp dụng Claude, viết skill dùng chung cho cả team để tự động hóa quy trình mỗi lần chạy.</p>
+          </div>
+          <div class="row result">
+            <span class="label">Kết quả</span>
+            <p>Thời gian làm báo cáo giảm từ 3 tiếng xuống 20 phút.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" aria-labelledby="skills-title">
+    <div class="skills-blob" aria-hidden="true"></div>
+    <div class="wrap">
+      <h2 class="section-title reveal" id="skills-title">Kỹ năng và công cụ</h2>
+      <div class="skill-group reveal">
+        <h3>Kỹ năng</h3>
+        <ul class="tags skills">
+          <li>Lên kế hoạch chiến dịch</li>
+          <li>Viết nội dung quảng cáo</li>
+          <li>Chạy quảng cáo Facebook</li>
+          <li>Phân tích số liệu</li>
+          <li>Tự động hóa quy trình</li>
+          <li>Viết câu lệnh AI</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Công cụ</h3>
+        <ul class="tags tools">
+          <li>Claude</li>
+          <li>Gemini</li>
+          <li>Excel</li>
+          <li>PowerPoint</li>
+          <li>Word</li>
+          <li>Photoshop</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" aria-labelledby="contact-title">
+    <div class="contact-moon" aria-hidden="true"></div>
+    <div class="contact-dot" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow">Liên hệ</span>
+      <h2 class="section-title reveal" id="contact-title" style="margin-left:auto;margin-right:auto;">Cùng trò chuyện nhé</h2>
+      <p class="contact-text reveal">Bạn là nhà tuyển dụng hoặc đối tác muốn trao đổi? Gửi email cho mình nhé.</p>
+      <a class="email" href="mailto:khanhvymar@gmail.com">khanhvymar@gmail.com</a>
+      <a class="btn btn-big" href="mailto:khanhvymar@gmail.com">Gửi email cho mình</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Khánh Vy · Marketing</p>
+</footer>
+
+<script>
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('js');
+    var items = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>

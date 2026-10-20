@@ -1,0 +1,5 @@
+# Chỉ đưa file của trang web lên kho công khai.
+# Mọi file khác (ho-so.md, ban-1, ban-2, ban-3...) giữ lại trên máy.
+*
+!.gitignore
+!index.html
